@@ -1,0 +1,73 @@
+<%-include('header')%>
+
+
+<div class="container col s8 offset-s2 z-depth-1 main-body" id="main-body">
+    <div class="col s12">
+        <ul class="tabs tabs-fixed-width">
+            <li class="tab col s4"><a class="active" href="#main-player">视频</a></li>
+            <li class="tab col s4"><a href="#main-document">课件</a></li>
+            <li class="tab col s4"><a href="#main-about">相关资料</a></li>
+        </ul>
+    </div>
+    <div id="main-player">
+        <div id="video-wrapper">
+            <video id="my-video" class="video-js" controls preload="auto" fluid="true">
+                <source src="/video/video.mp4" type='video/mp4'>
+                <source src="/video/video.webm" type='video/webm'>
+
+            </video>
+        </div>
+        <canvas id="cover-canvas">
+            当前浏览器不支持Canvas，请更换浏览器后再试
+        </canvas>
+
+        <div class="plugin" id="config-board">
+
+            <div class="container palette">
+                <span class="config-text">字体：</span>
+                <input type="text" name="color-picker" id="color-picker-text" placeholder="更改字体颜色">
+            </div>
+            <div class="container type-control">
+                <span class="config-text">类型：</span>
+                <ul class="type-list">
+                    <li class="type-active" value="normal"><span class="material-icons">clear_all</span></li>
+                    <li value="align_bottom"><span class="material-icons">vertical_align_bottom</span></li>
+                    <li value="align_top"><span class="material-icons">vertical_align_top</span></li>
+                </ul>
+            </div>
+            <div class="container rate-control">
+                <span class="config-text">速率：</span>
+                <div class="input-field col s12">
+                    <select id="play-rate">
+                        <option value="" disabled selected>调节播放速度</option>
+                        <option value="0.5">0.5x</option>
+                        <option value="1">1x</option>
+                        <option value="1.25">1.25x</option>
+                        <option value="1.5">1.5x</option>
+                        <option value="2.0">2.0x</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="col row center-align main-footer" id="footer">
+
+            <button class="btn waves-effect waves-light z-depth-0" id="barrage-config">
+                <i class="material-icons">widgets</i>
+            </button>
+            <div class="input">
+                <input class="input-place" type="text" name="msg" id="msg" value="" placeholder="可以在这发表你现在的看法噢~"/>
+            </div>
+            <button type="button" class="col s1 waves-effect waves-light btn send z-depth-0 input-button" id="sendBtn">
+                发送
+            </button>
+        </div>
+    </div>
+    <div id="main-document"></div>
+    <div id="main-about"></div>
+</div>
+
+<script src="/javascript/video.js"></script>
+<script src="/javascript/palette-color-picker.min.js"></script>
+<script src="/javascript/offline_controller.js"></script>
+<%-include('footer')%>

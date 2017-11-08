@@ -1,0 +1,14 @@
+#for Win
+Thumbs.db
+Desktop.ini
+
+#node
+node_modules
+
+#project
+*.mp4
+*.webm
+log.txt
+Client
+favicon.ico
+

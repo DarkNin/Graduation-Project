@@ -1,0 +1,23 @@
+nav {
+    background-color: #334252;
+}
+
+.btn, .btn-large {
+    background-color: #73b9ff;
+}
+.btn:hover, .btn-large:hover{
+    background-color: #4993f8;
+}
+
+#toast-container {
+    right: 50%;
+}
+
+.toast {
+    right: -50%;
+    background-color: #334252
+}
+
+input:focus {
+    border-bottom-color: #000000; !important;
+}

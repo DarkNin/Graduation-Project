@@ -1,0 +1,138 @@
+#main-body {
+    position: relative;
+    background: #fff;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+#main-player {
+    position: relative;
+}
+
+#my-video {
+    position: relative;
+}
+
+#cover-canvas {
+    pointer-events: none;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+}
+
+#barrage-config {
+    float: left;
+    color: #fff;
+    left: auto;
+    right: auto;
+    padding: 0;
+    margin: 0 1rem;
+    height: 2.2rem;
+    width: 2.2rem;
+}
+
+#barrage-config i {
+    font-size: 1.4rem;
+}
+
+.input {
+    float: left;
+    left: auto;
+    right: auto;
+    width: 80%;
+    margin-right: 1rem;
+    /*margin-left: 8%;*/
+}
+
+.input-place {
+    height: 2.2rem;
+}
+
+.input-button {
+    line-height: 2.2rem;
+    height: 2.2rem;
+}
+
+input[id=msg]:not(.browser-default) {
+    height: 2.2rem;
+    margin-bottom: 10px;
+    padding: 2px;
+    font-size: 12px;
+}
+.palette {
+    margin-top: 14px;
+}
+
+.config-text {
+    color: #26a69a;
+    margin: 0 0 5px -5px;
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+}
+
+#color-picker-text {
+    width: 100px;
+!important;
+    height: 28px;
+    line-height: 28px;
+    margin-bottom: 0;
+    vertical-align: top;
+}
+
+.type-control {
+    margin-top: 8px;
+}
+
+.type-list {
+    height: 28px;
+    margin: 0;
+}
+
+.type-list li {
+    float: left;
+    color: #bcbcbc;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    margin: 0 9px;
+}
+
+.type-list .type-active {
+    color: #26a69a;
+}
+
+.type-list li span {
+    font-size: 28px;
+}
+
+.rate-control {
+    margin-top: 8px;
+}
+
+.rate-control .input-field {
+    margin: 0;!important;
+}
+
+#footer {
+    margin: 10px 0;
+    position: relative;
+    z-index: 100;
+}
+
+.plugin {
+    z-index: 200;
+    position: absolute;
+    width: 200px;
+    height: 240px;
+    border-radius: 3px 3px 0 0;
+    background-color: #fff;
+    margin-top: -240px;
+    box-shadow: 1px -2px 4px gray;
+    display: none;
+}
+
+.fullscreen-extend {
+    width: 100%;
+}
