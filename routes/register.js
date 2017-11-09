@@ -5,7 +5,7 @@ let sha1 = require('../middlewares/cryptoUtil.js').sha1;
 
 router.get('/', (req, res) => {
     res.render('register', {
-        notification: '1'
+        //notification: '1'
     })
 });
 
@@ -29,7 +29,6 @@ router.post('/', (req, res) => {
         return res.render('register', {
             notification: notification
         });
-        //return res.redirect('/register');
     }
 
     let date = new Date();

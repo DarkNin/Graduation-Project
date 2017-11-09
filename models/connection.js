@@ -98,7 +98,7 @@ function createAccount(usr) {
 // connection.end(function (err) {
 //     console.log(err);
 // });
-
+exports.pool = pool;
 exports.insertMsg = insertMsg;
 exports.selectMsg = selectMsg;
 exports.createAccount = createAccount;
