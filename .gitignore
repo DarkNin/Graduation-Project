@@ -12,3 +12,6 @@ log.txt
 Client
 favicon.ico
 
+#for ide
+.idea
+
