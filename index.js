@@ -1,6 +1,7 @@
 let express = require('express');
 let session = require('express-session');
 let MySqlStore = require('express-mysql-session');
+let flash = require('connect-flash');
 let Db = require('./models/connection');
 let fs = require('fs');
 let path = require('path');
@@ -37,13 +38,13 @@ app.use(session({
 
 }));
 
+app.use(flash());
 
 app.use((req, res, next) => {
-    req.session.notification = 'asdasdasd';
-    res.locals.notification = req.session.notification;
+    res.locals.user = req.session.user;
+    res.locals.notification = req.flash('notification').toString();
     next();
 });
-// app.locals.notification = '';
 
 routes(app);
 

@@ -2,14 +2,13 @@ let express = require('express');
 let router = express.Router();
 let Db = require('../models/connection.js');
 let sha1 = require('../middlewares/cryptoUtil.js').sha1;
+let check = require('../middlewares/loginCheck');
 
-router.get('/', (req, res) => {
-    res.render('register', {
-        //notification: '1'
-    })
+router.get('/', check.checkNotLogin, (req, res) => {
+    res.render('register')
 });
 
-router.post('/', (req, res) => {
+router.post('/', (req, res, next) => {
     let name = req.body.nickname;
     let password = req.body.password;
     let __password = req.body._password;
@@ -25,15 +24,13 @@ router.post('/', (req, res) => {
         }
 
     } catch (e) {
-        let notification = e.message;
-        return res.render('register', {
-            notification: notification
-        });
+        req.flash('notification', e.message);
+        return res.redirect('/register');
     }
 
     let date = new Date();
     let timeStamp = date.getTime();
-    password = sha1(password +':' + timeStamp);
+    password = sha1(password + ':' + timeStamp);
     let usr = {
         date: date.toDateString(),
         name: name,
@@ -42,34 +39,29 @@ router.post('/', (req, res) => {
     };
     Db.findAccount(usr).then(
         (arg) => {
+            console.log('find:' + JSON.stringify(arg));
             if (!arg[0]) {
                 Db.createAccount(usr).then(
                     (arg) => {
-                        console.log(arg);
-                    }
+                        req.session.user = {
+                            id: arg[0].insertId,
+                            name: usr.name
+                        };
 
+                    }
                 ).catch((err) => {
                     console.log('create error:' + err);
                 })
             } else {
-                let notification = '该id已被占用';
-                return res.render('register', {
-                    notification: notification
-                });
+                req.flash('notification', '该id已被占用');
+                return res.redirect('/register');
             }
         }
     ).catch((err) => {
             console.log('find error:' + err);
+            next(err);
         }
     )
-    // Db.createAccount(usr).then(
-    //     (arg) => {
-    //         console.log(arg);
-    //     }
-    // ).catch((err) => {
-    //     console.log(err);
-    // })
-
 });
 
 
