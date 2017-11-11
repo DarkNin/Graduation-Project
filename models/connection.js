@@ -78,9 +78,9 @@ function findAccount(usr) {
 }
 function createAccount(usr) {
     let options = {
-        sql: 'INSERT INTO user(id, date, name, password) VALUES (NULL, ?, ?, ?)',
+        sql: 'INSERT INTO user(id, date, name, password, timeStamp) VALUES (NULL, ?, ?, ?, ?)',
         timeout: 4000,
-        values: [usr.date, usr.name, usr.password]
+        values: [usr.date, usr.name, usr.password, usr.timeStamp]
     };
     return new Promise((resolve, reject) => {
         pool('video').getConnection((err, connection) => {
