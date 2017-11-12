@@ -44,9 +44,10 @@ router.post('/', (req, res, next) => {
                 Db.createAccount(usr).then(
                     (arg) => {
                         req.session.user = {
-                            id: arg[0].insertId,
+                            id: arg.insertId,
                             name: usr.name
                         };
+                        res.redirect('/video');
 
                     }
                 ).catch((err) => {
