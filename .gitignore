@@ -3,15 +3,15 @@ Thumbs.db
 Desktop.ini
 
 #node
-node_modules
+node_modules/
 
 #project
 *.mp4
 *.webm
 log.txt
-Client
+Client/
 favicon.ico
 
 #for ide
-.idea
+.idea/
 
