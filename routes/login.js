@@ -22,7 +22,7 @@ router.post('/', (req, res, next) => {
                         id: arg[0].id,
                         name: arg[0].name
                     };
-                    res.redirect('checkpage');
+                    res.redirect('video');
                 } else {
                     req.flash('notification', '密码错误');
                     res.redirect('login');

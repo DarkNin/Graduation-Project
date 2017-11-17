@@ -17,12 +17,34 @@
 <header>
     <nav>
         <div class="nav-wrapper">
+            <% if (!user) { %>
             <ul class="right">
-                <li><a href="#" class="btn">登录</a></li>
-                <li><a href="#" class="btn">注册</a></li>
+                <li><a href="/login" class="btn">登录</a></li>
+                <li><a href="/register" class="btn">注册</a></li>
             </ul>
+            <% } else { %>
+
             <ul class="right">
-                <li><a href="#">主页</a></li>
+                <li>
+                    <a class="dropdown-button avatar avatar-dropdown"
+                       data-activates="dropdown-list"
+                       data-hover="true"
+                       data-belowOrigin="true"
+                       data-constrainWidth="false"
+                       data-gutter="100px">
+                        <img src="/img/avatar.jpg">
+                    </a>
+                </li>
+
+                <!--<li><span><%= user.name %>你好</span></li>-->
+                <!--<li><a href="/logout">登出</a></li>-->
+            </ul>
+            <ul id="dropdown-list" class="dropdown-content">
+                <li><a href="/logout">登出</a></li>
+            </ul>
+            <% } %>
+            <ul class="right">
+                <li><a href="/video">主页</a></li>
                 <li><a href="#">我的课程</a></li>
                 <li><a href="#">问答专区</a></li>
             </ul>

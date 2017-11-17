@@ -1,3 +1,33 @@
+.avatar-dropdown {
+    margin-right: 2em;
+}
+
+@media only screen and (min-width: 992px) {
+    .avatar-dropdown {
+        margin-right: 10em;
+    }
+}
+
+.avatar-dropdown:hover {
+    background: none;
+}
+
+.avatar-dropdown img {
+    margin-top: 4px;
+    width: 56px;
+    height: 56px;
+    border-radius: 30px;
+}
+
+#dropdown-list {
+    top: 64px !important;
+    margin-left: -7px;
+}
+
+.dropdown-content li > a {
+    text-align: center;
+}
+
 #main-body {
     position: relative;
     background: #fff;
@@ -59,6 +89,7 @@ input[id=msg]:not(.browser-default) {
     padding: 2px;
     font-size: 12px;
 }
+
 .palette {
     margin-top: 14px;
 }
@@ -112,7 +143,7 @@ input[id=msg]:not(.browser-default) {
 }
 
 .rate-control .input-field {
-    margin: 0;!important;
+    margin: 0 !important;
 }
 
 #footer {
