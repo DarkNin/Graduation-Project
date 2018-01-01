@@ -3,7 +3,7 @@ let config = require('config');
 
 
 function pool(database) {
-    let dbConfig = config.get('databese');
+    let dbConfig = config.get('database');
     return mysql.createPool({
         connectionLimit: 100,
         host: dbConfig.host,
@@ -23,7 +23,7 @@ function insertMsg(obj) {
     };
     pool('video').getConnection((err, connection) => {
         connection.query(options, (err, results, fields) => {
-            console.log('\n' + err + '///' + results + '///' + fields + '\n');
+            //console.log('\n' + err + '///' + results + '///' + fields + '\n');
             connection.destroy();
         })
     });

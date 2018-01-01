@@ -8,7 +8,7 @@ let path = require('path');
 let bodyParser = require('body-parser');
 let routes = require('./routes');
 let app = express();
-
+let config = require('config');
 
 
 app.use(bodyParser.json()); // for parsing application/json
@@ -49,6 +49,6 @@ app.use((req, res, next) => {
 routes(app);
 
 
+let port = config.get('port');
 
-
-app.listen(3307);
+app.listen(port);

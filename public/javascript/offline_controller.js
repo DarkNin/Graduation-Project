@@ -2,8 +2,6 @@ var textArray = [];
 
 $(function () {
 
-    var vHeight = $('#video-wrapper').height();
-    var vWidth = $('#video-wrapper').width();
     var myPlayer = videojs('my-video', {
         controls: true,
         autoplay: false,
@@ -27,6 +25,9 @@ $(function () {
     );
     var canvas = document.getElementById('cover-canvas');
     var context = canvas.getContext('2d');
+
+    var vHeight = $('#video-wrapper').height();
+    var vWidth = $('#video-wrapper').width();
 
 
     canvas.width = vWidth;
