@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "config": "^1.29.0",
     "connect-flash": "^0.1.1",
     "ejs": "^2.5.7",
     "express": "^4.15.3",

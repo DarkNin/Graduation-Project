@@ -1,11 +1,14 @@
 let mysql = require('mysql');
+let config = require('config');
+
 
 function pool(database) {
+    let dbConfig = config.get('databese');
     return mysql.createPool({
         connectionLimit: 100,
-        host: 'localhost',
-        user: 'root',
-        password: '9777',
+        host: dbConfig.host,
+        user: dbConfig.user,
+        password: dbConfig.password,
         database: database
     });
 }
