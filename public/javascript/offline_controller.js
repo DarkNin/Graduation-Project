@@ -102,7 +102,7 @@ $(function () {
 
         };
         $.ajax({
-            url: '/video/barrage_server',
+            url: '/main/barrage_server',
             type: 'post',
             dataType: 'json',
             data: data,
@@ -175,7 +175,7 @@ function getBarrage(beginTime) {
     };
     var temp = [];
     $.ajax({
-        url: '/video/barrage_server/default',
+        url: '/main/barrage_server/default',
         type: 'get',
         dataType: 'json',
         data: data,

@@ -14,8 +14,8 @@ let config = require('config');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, 'public')));
-
+app.use('/moocstatic', express.static(path.join(__dirname, 'public')));
+//app.use(express.static('public'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -50,5 +50,5 @@ routes(app);
 
 
 let port = config.get('port');
-
+console.log('now server listen port ' + port + ' with mode ' + process.env.NODE_ENV);
 app.listen(port);
